@@ -63,7 +63,7 @@ We'll use following examples to illustrate the communication paths:
 
 # Prerequisites
 
-The GitHub repository [TODO: Where can we publish code and link it here?] contains all required Infrastructure as Code assets, allowing you to easily reproduce the setup and exploration in your own Azure subscription. 
+The repository [Azure-Samples/azure-networking_private-subnet-routing](https://github.com/Azure-Samples/azure-networking_private-subnet-routing) on GitHub contains all required Infrastructure as Code assets, allowing you to easily reproduce the setup and exploration in your own Azure subscription. 
 
 <br/>
 
@@ -80,10 +80,10 @@ The implementation uses the following tools:
 
 ## Git repository
 
-- Clone the Git repository from [TODO: Repo link here] and change `cd` into its repository root.
+- Clone the Git repository from and change into its repository root.
   ```
-  $ git clone ...
-  $ cd ...
+  $ git clone https://github.com/Azure-Samples/azure-networking_private-subnet-routing
+  $ cd azure-networking_private-subnet-routing
   ```
 
 <br/>
@@ -105,7 +105,7 @@ We kick off our journey by deploying the infrastructure depicted in the architec
 
 <br/>
 
-- Open file `terraform.tfvars` in your favorite code editor, and adjust the values of variables `location` (the region to which all resource will be deployed) and `prefix` (the shared name prefix for all resources) if required.
+- Open file `terraform.tfvars` in your favorite code editor, and adjust the values of variables `location` (the region to which all resource will be deployed) and `prefix` (the shared name prefix for all resources). Also don't forget to provide login credentials for your VM by setting values for `admin_username` and `admin_password`.
 
 - Set environment variable `ARM_SUBSCRIPTION_ID` to point terraform to the subscription you are currently logged on to.
   ```
