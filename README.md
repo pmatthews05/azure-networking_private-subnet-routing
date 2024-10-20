@@ -1,6 +1,6 @@
 # Routing options for VMs without Default Outbound Internet Access (from Private Subnets)
 
-Virtual Machines deployed to Azure used to have _Default Outbound Internet Access_. Until today, this allows virtual machines to connect to resources on the internet (including public endpoints of Azure PaaS services) even if the Cloud administrators have not configured any outbound connectivity method for their virtual machines explicitly. Implicitly,  Azure's network stack performed source network address translation (SNAT) with a public IP address that was provided by the platform. 
+Virtual Machines deployed in Azure used to have _Default Outbound Internet Access_. Until today, this allows virtual machines to connect to resources on the internet (including public endpoints of Azure PaaS services) even if the Cloud administrators have not configured any outbound connectivity method for their virtual machines explicitly. Implicitly,  Azure's network stack performed source network address translation (SNAT) with a public IP address that was provided by the platform. 
 
 <br/>
 
