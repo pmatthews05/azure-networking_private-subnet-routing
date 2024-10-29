@@ -243,7 +243,7 @@ Typically, customers deploy a central Firewall in their network to ensure all ou
 > :point_up: Note that both calls to the Key Vault succeed as they are routed through the central Firewall; both requests (to Azure Management plane and Key Vault data plane) hit their endpoints with the Firewall's public IP.
 
 
-# Scenario 3: Bypass Firewall for traffic to Azure management plane.
+# Scenario 3: Introduce SNAT via Load Balancer for specific service tags.
 
 At this point all, internet and Azure-bound traffic to public endpoints is routed through the Azure Firewall. Although this allows you to centrally control all traffic, you might have good reasons to prefer to offload some communication from this component by routing traffic targeting a specific IP address range through a different component for SNAT -- for example to optimize latency or reduce load on the firewall component for communication with well-known hosts.
 
@@ -334,7 +334,7 @@ In our scenario, we'll do this for the Service tag `AzureResourceManager`, which
 > :point_up: We explored this path for the platform-defined service tag `AzureResourceManager`. However, it's equally possible to define this communication path for your self-defined IP addresses or ranges.
 
 
-# Scenario 4: Add 'shortcut' for traffic to Key Vault data plane.
+# Scenario 4: Use Service Endpoints for direct communication with Azure services.
 
 For communication with many platform services, Azure offers customers [Virtual Network Service Endpoints](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview) to enable an optimized connectivity method that keeps traffic on its backbone network. Customers can use this, for example, to offload traffic to platform services from their network resources and increase security by enabling access restrictions on their resources. 
 
