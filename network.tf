@@ -33,7 +33,7 @@ resource "azapi_resource" "subnet-vm" {
   name      = "${azurerm_virtual_network.vnet.name}-vm-snet"
   parent_id = azurerm_virtual_network.vnet.id
 
-  body = jsonencode({
+  body = {
     properties = {
       addressPrefixes       = [cidrsubnet(var.base_cidr_space, 8, 3)]
       defaultOutboundAccess = false
@@ -45,7 +45,7 @@ resource "azapi_resource" "subnet-vm" {
       #   }
       # ]
     }
-  })
+  }
   schema_validation_enabled = false
 
   depends_on = [
